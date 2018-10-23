@@ -1,28 +1,48 @@
 Answer each question in a written format
 
-1. What does semantic HTML mean?
+1. What does semantic HTML mean? semantic HTML means that HTML tags have meaning and you should be using them as such
+meaning you shouldn't use HTML tags just because you like the default style of them so only use an h tag if its a heading
+only use an a tag if its a link/anchor etc.
 
-2. What is the box model?
+2. What is the box model? the box model is content in the center, padding between content and border, border is between padding and margin,
+margin is between the border and other elements the content is the stuff between element tags, you use padding to push the content around the container
+the most common border is 1px solid and a color which is usually black margin is used to push away other elements
 
-3. What is the difference between IDs and Classes?
+3. What is the difference between IDs and Classes? they are both used to apply styles to certain elements
+it is best practice to use an id on only one element if you need to apply styles to more than one element use a class
 
-4. What is z-index (CSS property) useful for?
+4. What is z-index (CSS property) useful for? you use the z index to set the load order of styles so to say if you have overlapping elements and
+you want a specific element on top or in the middle or bottom you would use the z index to set which one gets set where the higher the index the closer
+it will be towards the top and the one with the highest number will be on top the one with the lowest number will be on bottom
 
-5. Summarize what the keyword 'this' is used for?
+5. Summarize what the keyword 'this' is used for? the this keyword helps set the context of variables and functions i 
+commonly use them for javascript classes and react components it helps set the context to that specific instance of the code
+so on a class you have this.color = red and you make a new instance of that class and change the instances this.color to blue only
+that color on that instance of that class will change and not that class itself on react we use this.state.variable is referring to
+that specific instance so multiple can be running that app and change this.state.variable independently
 
-6. What is a callback? What are common uses for callbacks in JavaScript?
+6. What is a callback? What are common uses for callbacks in JavaScript? a callback is a function passed in as an argument to another function
+for that function to call on later common uses for callbacks are things like .filter and .map they have callback functions in them that help you modify arrays
 
-7. What is a closure and why is it useful?
+7. What is a closure and why is it useful? a closure is a function that returns a functionand its useful for if you need acess to that begining function later 
+when you make a closure it makes a snapshot of that entire function so say you have an axios call in that inner function that relied on the outer function
+well because that snapshot was created it can access the information in the outer function if we didnt make it a closure the inner function wouldnt have access
+to the information in the outer function and the code would not work how we expected it to
 
-8. How does a prototype work?
+8. How does a prototype work? prototypes are on classes that when the new instances of the class are made it doesnt copy those prototypes down
+but instead references the original prototype
 
-9. Describe what a component-based framework/library is?
+9. Describe what a component-based framework/library is? a component based framework/library is the idea of splitting up your code into smaller and potentially resuable parts 
+and all your components come together to make the entire app
 
-10. What is the component lifecycle in React?
+10. What is the component lifecycle in React? before the component mounts, the component has mounted, before the component unmounts and the component has unmounted
 
-11. What is REST? (not just a description of the acronym)
+11. What is REST? (not just a description of the acronym) REST is using http as it was originally seen getting informations should use get reqruests
+put, post, and delete should be used for updating, creating and deleting respectively and you interact with api using the url an example would be
+https://example.com/item/89 and that would go make an https request for item 89 
 
-12. Name three common ways of getting data from a request (in Express.JS):
+12. Name three common ways of getting data from a request (in Express.JS): there is req.body which i typically use with put and post reqruests,
+there is req.query which i typically use with get requests and there is req.params which i typically use with put and delete requests
 
 
 
@@ -36,10 +56,14 @@ email varchar(255)
 
 13. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
--Get all users:
+-Get all users: select * from users
 
--Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+-Create a new user with the name of 'your name' and an email of 'fake@fake.com': insert into users (name, email) 
+values('Jeremy Coplen', 'fake@fake.com')
 
--Update the newly created user's name to 'Bobby Boy':
+-Update the newly created user's name to 'Bobby Boy': update users
+set name = 'Bobby Boy'
+where id = $1 ($1 referes to the users so that you dont update everyones name to Bobby Boy)
 
--Delete the newly updated user:
+-Delete the newly updated user: delete from users
+where id = $1 ($1 refers to the users id so that you dont delete everyone in the db)
