@@ -1,12 +1,19 @@
 Answer each question in a written format
 
-1. What does semantic HTML mean? semantic HTML means that HTML tags have meaning and you should be using them as such
-meaning you shouldn't use HTML tags just because you like the default style of them so only use an h tag if its a heading
-only use an a tag if its a link/anchor etc.
+1. What does semantic HTML mean? semantic HTML are elements that describe its meaning to the browser and the developer. Some examples of non semantic
+elements are div, span and section. Some examples of sementic elements are form, input, p, h1, table. The best practice for semantic HTML is making
+sure that you use semantic elements properly and not just using because you like the default styling that they have so you should only use li
+if you have a list you should only use h1 if its a heading if its not a heading you should use p for the text. Another thing that you can do but 
+I haven't done myself is create custom semantic elements some pros of using custom semantic elements are that it can make that element make more sense to
+the browser and developer and you can create your own methods on those semantic elements an example of methods that are built in to HTML is onClick.
+Some cons are that if you aren't careful the custom elements can confuse the browser and deveolpers instead of making things more clear.
 
-2. What is the box model? the box model is content in the center, padding between content and border, border is between padding and margin,
-margin is between the border and other elements the content is the stuff between element tags, you use padding to push the content around the container
-the most common border is 1px solid and a color which is usually black margin is used to push away other elements
+2. What is the box model? the box model lets you create borders around elements and lets you create space between the content and its 
+containter as well as space between other elements. The content is the text or image or "content" in the element and thats in the center,
+the padding allows you to create space between the content and its container, the border allows to create a visible line around the element
+which the standard is 1px solid and a color which is usually black, the margin is what lets you create space between other elements lets say
+i have two divs next to each other and dont want them smushed together i would give those divs a margin-right of however much space i want
+and it would push the elements to the right of it by the amount specified
 
 3. What is the difference between IDs and Classes? they are both used to apply styles to certain elements
 it is best practice to use an id on only one element if you need to apply styles to more than one element use a class
@@ -29,13 +36,19 @@ when you make a closure it makes a snapshot of that entire function so say you h
 well because that snapshot was created it can access the information in the outer function if we didnt make it a closure the inner function wouldnt have access
 to the information in the outer function and the code would not work how we expected it to
 
-8. How does a prototype work? prototypes are on classes that when the new instances of the class are made it doesnt copy those prototypes down
-but instead references the original prototype
+8. How does a prototype work? prototypes are a property on functions they are object instances that will become the prototype for all objects created using that function.
+So with that said objects also have a prototype but they dont work quite the same as function prototypes i like to think of prototypes as a shared shelf and you can add
+properties to the that shelf and all of the objects created from those functions can access those properties but they dont make new copies of that shelf 
+like the non prototype properties on that function. So the objects you create from classes/constructor functions have their own non shared shelf that they copied
+the properties off the class/constructor function and put on that non shared shelf and then the have access to the shared shelf but dont copy/ make their own versions of
+that shared shelf which is that prototypes object
 
 9. Describe what a component-based framework/library is? a component based framework/library is the idea of splitting up your code into smaller and potentially resuable parts 
 and all your components come together to make the entire app
 
-10. What is the component lifecycle in React? before the component mounts, the component has mounted, before the component unmounts and the component has unmounted
+10. What is the component lifecycle in React? before the component mounts, the component has mounted, before the component updates, after the component updates, 
+and the component has unmounted there are also lifecycle methods you can use to run code at points in the component lifecycle i mostly use componentDidMount for
+when the component mounts and componentDidUpdate for when the component updated so i can acess previous props and current props
 
 11. What is REST? (not just a description of the acronym) REST is using http as it was originally seen getting informations should use get reqruests
 put, post, and delete should be used for updating, creating and deleting respectively and you interact with api using the url an example would be
